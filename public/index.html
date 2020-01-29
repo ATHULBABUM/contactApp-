@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+    <head>  
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" >
+        <title>Contact List Application</title>
+    </head>
+    <body>
+        <div class="container" ng-controller="appControl">
+            <h1>Contact List Application</h1>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <td>Name</td>
+                        <td>E-mail</td>
+                        <td>Phone</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input class="forms-control" ng-model="contact.name">
+                        </td>
+                        <td><input class="forms-control" ng-model="contact.email">
+                        </td>
+                        <td><input class="forms-control" ng-model="contact.number">
+                        </td>
+                        <td><button class="btn btn-primary" ng-click="addContact()">
+                        Add Contact </button></td>
+                    </tr>
+                    <tr ng-repeat="contact in contactList">
+                        <td>{{contact.name}}</td>
+                        <td>{{contact.email}}</td>
+                        <td>{{contact.number}}</td>
+                        <td><Remove class="btn btn-danger" ng-click="remove(contact._id)"> Remove 
+                        </button> </td>
+                    </tr>
+                </tbody>
+            </table>    
+            
+        </div>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js">
+        </script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script>
+ 
+        <script src="controllers/controller.js"></script>
+ 
+    </body>
+</html>
